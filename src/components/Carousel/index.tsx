@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 // import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -57,6 +58,14 @@ export function CarouselImage({ flash, essential, data }: CarouselImageProps) {
         });
     }, [api]);
 
+    const router = useRouter();
+
+    const sendData = (product: any) => {
+        console.log('products...', product)
+        const queryString = encodeURIComponent(JSON.stringify(product));
+        router.push(`/Products/${product.id}?data=${queryString}`);
+    }
+
     return (
         <Carousel setApi={setApi}>
             <CarouselContent>
@@ -88,6 +97,7 @@ export function CarouselImage({ flash, essential, data }: CarouselImageProps) {
                                                 alt={item.title || "alt"}
                                                 width={400}
                                                 height={400}
+                                                className="max-w-full md:max-w-md lg:max-w-lg"
                                             />
                                         </div>
                                     </CardContent>
@@ -102,14 +112,14 @@ export function CarouselImage({ flash, essential, data }: CarouselImageProps) {
                             className="pl-1 md:basis-1/2 lg:basis-1/3 rounded-none"
                         >
                             <div className="flex justify-center items-center">
-                                <CardContent className="flex flex-col items-center justify-center text-black space-y-4">
-                                    <div className="bg-primaryy h-68 flex items-center justify-center relative group">
+                                <CardContent className="flex flex-col items-center justify-center text-black space-y-4" onClick={() => sendData(item)}>
+                                    <div className="bg-primaryy h-68 flex items-center justify-center relative group w-full md:max-w-sm">
                                         <Image
                                             src={item.image || "/assets/best-nike-2.svg"}
                                             alt={item.title || "alt"}
                                             width={400}
                                             height={300}
-                                            className="z-10"
+                                            className="z-10 max-w-full h-auto"
                                         />
                                     </div>
                                     <div className="flex flex-col space-y-2 mt-4 w-full">
@@ -131,9 +141,12 @@ export function CarouselImage({ flash, essential, data }: CarouselImageProps) {
                         >
                             <div className="flex justify-center items-center group">
                                 <CardContent className="flex items-center justify-center text-black bg-transparent">
-                                    <div className="relative h-80 w-72">
+                                    <div
+                                        // className="relative h-80 w-full max-w-xs md:max-w-md"
+                                        className="relative h-80 w-72"
+                                    >
                                         <Image
-                                            src={item.icon || "/assets/best-nike-1.svg"}
+                                            src={item.icon || "/assets/essential-1.svg"}
                                             alt={item.title || "alt"}
                                             layout="fill"
                                             objectFit="cover"
@@ -147,10 +160,11 @@ export function CarouselImage({ flash, essential, data }: CarouselImageProps) {
                             </div>
                         </CarouselItem>
                     ))
-                )}
-            </CarouselContent>
+                )
+                }
+            </CarouselContent >
             <CarouselPrevious />
             <CarouselNext />
-        </Carousel>
+        </Carousel >
     );
 }

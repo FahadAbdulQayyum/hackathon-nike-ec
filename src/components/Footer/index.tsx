@@ -6,8 +6,10 @@ import { TiSocialYoutubeCircular, TiSocialInstagram } from "react-icons/ti";
 const Footer = () => {
     return (
         <div className="flex flex-col p-standardSize bg-black text-white space-y-10">
-            <div className="flex justify-between flex-wrap">
-                <span className="flex space-x-20">
+            {/* Main Links Section */}
+            <div className="flex flex-col md:flex-row justify-between flex-wrap space-y-10 md:space-y-0">
+                {/* Links Groups */}
+                <div className="flex flex-col md:flex-row space-y-10 md:space-y-0 md:space-x-20">
                     <ul className="space-y-2 text-sm text-gray-400">
                         <h1 className="font-bold text-white uppercase">Find a Store</h1>
                         <li>BECOME A MEMBER</li>
@@ -31,32 +33,31 @@ const Footer = () => {
                         <li>Investors</li>
                         <li>Sustainability</li>
                     </ul>
-                </span>
-                <span>
-                    <ul className="flex space-x-5">
-                        <li><AiFillTwitterCircle aria-label="Twitter" className="hover:text-blue-400" /></li>
-                        <li><FaFacebook aria-label="Facebook" className="hover:text-blue-600" /></li>
-                        <li><TiSocialYoutubeCircular aria-label="YouTube" className="hover:text-red-600" /></li>
-                        <li><TiSocialInstagram aria-label="Instagram" className="hover:text-pink-500" /></li>
-                    </ul>
-                </span>
+                </div>
+                {/* Social Media Icons */}
+                <ul className="flex justify-center space-x-5">
+                    <li><AiFillTwitterCircle aria-label="Twitter" className="hover:text-blue-400 text-2xl" /></li>
+                    <li><FaFacebook aria-label="Facebook" className="hover:text-blue-600 text-2xl" /></li>
+                    <li><TiSocialYoutubeCircular aria-label="YouTube" className="hover:text-red-600 text-2xl" /></li>
+                    <li><TiSocialInstagram aria-label="Instagram" className="hover:text-pink-500 text-2xl" /></li>
+                </ul>
             </div>
-            <div className="flex justify-between">
-                <span className="flex">
-                    <span className="flex items-center">
+
+            {/* Footer Bottom Section */}
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-5 md:space-y-0">
+                <div className="flex flex-col md:flex-row items-center md:space-x-5">
+                    <span className="flex items-center space-x-2">
                         <IoLocationOutline />
-                        <p className="mr-5">India</p>
+                        <p>India</p>
                     </span>
                     <span>© 2023 Nike, Inc. All Rights Reserved</span>
-                </span>
-                <span>
-                    <ul className="flex space-x-5">
-                        <li>Guides</li>
-                        <li>Terms of Sale</li>
-                        <li>Terms of Use</li>
-                        <li>Nike Privacy Policy</li>
-                    </ul>
-                </span>
+                </div>
+                <ul className="flex justify-center space-x-5 text-sm">
+                    <li>Guides</li>
+                    <li>Terms of Sale</li>
+                    <li>Terms of Use</li>
+                    <li>Nike Privacy Policy</li>
+                </ul>
             </div>
         </div>
     );

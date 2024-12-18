@@ -26,28 +26,28 @@ const Cart = () => {
                             >
                                 <div className="w-full md:w-[25%]">
                                     <Image
-                                        src={'/assets/fs-1.svg'}
-                                        alt={'cart'}
+                                        src={"/assets/gearup-1.svg"}
+                                        alt={"cart"}
                                         width={150}
                                         height={150}
                                         className="bg-primaryy"
                                     />
                                 </div>
-                                <div className="w-full md:w-[50%]">
+                                <div className="w-full md:w-[50%] space-y-2">
                                     <h1 className="font-bold">
                                         Nike Dri-FIT ADV TechKnit Ultra
                                     </h1>
                                     <p className="text-gray-400">
-                                        Men's Short-Sleeve Running Top
+                                        Men&apos;s Short-Sleeve Running Top
                                     </p>
                                     <p className="text-gray-400">
                                         Ashen Slate/Cobalt Bliss
                                     </p>
-                                    <div className="flex justify-between text-gray-400">
+                                    <div className="flex justify-between text-gray-400 w-[50%]">
                                         <p>Size: L</p>
                                         <p>Quantity: 1</p>
                                     </div>
-                                    <div className="flex justify-between mt-5">
+                                    <div className="flex justify-between mt-5 w-[15%]">
                                         <CiHeart />
                                         <RiDeleteBin6Line />
                                     </div>
@@ -70,11 +70,11 @@ const Cart = () => {
                 {/* Summary Section */}
                 <div className="lg:w-[30%] mt-6 lg:mt-0">
                     <h1 className="font-bold mb-4">Summary</h1>
-                    <div className="flex w-full justify-between">
+                    <div className="flex w-full justify-between space-y-1">
                         <p>Subtotal</p>
                         <p>₹ 20 890.00</p>
                     </div>
-                    <div className="flex w-full justify-between">
+                    <div className="flex w-full justify-between space-y-1">
                         <p>Estimated Delivery & Handling</p>
                         <p>Free</p>
                     </div>
@@ -97,7 +97,7 @@ const Cart = () => {
                     <CardContent className="flex flex-col items-start text-black">
                         <div className="bg-primaryy h-68 flex items-center justify-center">
                             <Image
-                                src={'/assets/best-nike-1.svg'}
+                                src={"/assets/product-40.svg"}
                                 alt={"best-nik-svg"}
                                 width={400}
                                 height={300}
@@ -106,7 +106,7 @@ const Cart = () => {
                         </div>
                         <div className="flex flex-col mt-4 w-full">
                             <p>Air Jordan 1 Mid SE Craft</p>
-                            <p className="text-gray-400 text-sm">Men's Shoes</p>
+                            <p className="text-gray-400 text-sm">Men&apos;s Shoes</p>
                             <p>MRP: ₹ 12 295.00</p>
                         </div>
                     </CardContent>
